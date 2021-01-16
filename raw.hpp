@@ -1,15 +1,13 @@
 #pragma once
 #include "policies.hpp"
 
-//template <class, template<class...> class...>
-//class Raw;
-//template <class... T>
-//Raw (T...) -> Raw<std::common_type_t<T...>>;
+
 
 
 
 ////////////////////////////////////////////////////////////////
-/// @brief Handles a raw array with uninitialized elements.
+/// @brief Allocator class
+///        Handles a raw array with uninitialized elements.
 ///
 ///        Calls no constructors when allocating space.
 ///        Calls no destructors when deallocating space.
@@ -147,3 +145,11 @@ private:
       size_type         m_size;
       bool const        m_malloced;
 };
+
+
+
+//template <class, template<class...> class...>
+//class Raw;
+//template <class... T>
+//Raw (T...) -> Raw<std::common_type_t<T...>>;
+
