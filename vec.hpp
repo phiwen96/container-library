@@ -1,31 +1,10 @@
 #pragma once
 #include "raw.hpp"
-#include "iteratorFacade.hpp"
-#include <ph/common/policies.hpp>
-
-namespace ph {
-
-
-
-//template <class, template<class...> class... Policies>
-//class vec;
+#include "policies.hpp"
 
 
 
 
-
-
-////////////////////////////////////////////////////////////////
-/// @brief Handles the construction and destruction of
-///        elements in the raw vec class "Raw"
-///
-///        vec<A> allo;
-///        allo += 3;                     // push back 3
-///        allo += 4;                     // push back 3
-///        cout << allo[1] << endl;       // get second element
-///        for(auto const& i : allo)      // print vec
-///               cout << i << endl;
-////////////////////////////////////////////////////////////////
 template <class T, class CheckSize = Policy::Check<true>>
 class vec
 {
@@ -353,13 +332,7 @@ inline std::ostream& operator<< (std::ostream& os, ph::vec<T> const& a) {
       return os;
 }
 
-//inline std::ostream& operator<< (std::ostream& os, ph::vec<char const*> const& a) {
-//      os << "{ ";
-//      for (int i = 0; i < a.size(); ++i)
-//      os << a[i] << " ";
-//      os << "}";
-//      return os;
-//}
+}
 
 
 
@@ -375,7 +348,7 @@ vec (T const (&)[N]) -> vec<T>;
 
 
 
-}
+
 
 
 
